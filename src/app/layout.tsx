@@ -16,7 +16,8 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Ajay Kote | Portfolio",
-  description: "Elite full-stack and ML developer portfolio of Ajay Kote."
+  description:
+    "Portfolio of Ajay Kote — CSE undergrad and full-stack developer building React, Node.js, and ML products. 1700+ LeetCode, SIH semi-finalist."
 };
 
 export default function RootLayout({

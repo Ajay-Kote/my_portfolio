@@ -6,7 +6,7 @@ import { ACHIEVEMENTS, CERTIFICATIONS, LEETCODE } from "@/lib/data";
 
 export default function Certifications() {
   return (
-    <section className="section-shell">
+    <section id="achievements" className="section-shell">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

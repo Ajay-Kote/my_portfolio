@@ -1,7 +1,6 @@
 import {
   BookOpenText,
   Briefcase,
-  Clapperboard,
   Code2,
   Cpu,
   Database,
@@ -45,124 +44,134 @@ export type Project = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" }
 ];
 
 export const HERO_ROLES = ["Full-Stack Developer", "ML Enthusiast", "Competitive Programmer"] as const;
 
 export const HERO_BIO =
-  "CSE undergrad at CMR Technical Campus · 365-Day LeetCode Streak · 1600+ Rating";
+  "CSE undergrad at CMR Technical Campus, Hyderabad · 8.9 CGPA · 1700+ LeetCode · SIH Semi-Finalist";
 
 export const ABOUT_TEXT =
-  "I build performant digital products with a strong systems mindset. My work blends full-stack engineering, practical machine learning, and competitive programming discipline to ship reliable software fast.";
+  "I am a Computer Science undergraduate with hands-on experience in full-stack development, machine learning, and competitive programming. I interned at Tarento Technologies building React and Node.js applications, and I ship end-to-end web apps and ML systems with a focus on clean, scalable solutions.";
+
+export const EDUCATION = {
+  degree: "B.Tech, Computer Science and Engineering",
+  school: "CMR Technical Campus, Hyderabad",
+  duration: "2023 – 2027",
+  gpa: "8.9 CGPA"
+} as const;
 
 export const ABOUT_STATS: Stat[] = [
+  { label: "LeetCode Rating", value: 1700, suffix: "+" },
   { label: "LeetCode Streak", value: 365, suffix: "+" },
-  { label: "Major Projects", value: 4, suffix: "+" },
-  { label: "Internship Months", value: 2, suffix: "+" },
-  { label: "LeetCode Rating", value: 1600, suffix: "+" }
+  { label: "CGPA", value: 8.9, suffix: "" },
+  { label: "Featured Projects", value: 4, suffix: "" }
 ];
 
 export const SKILL_GROUPS: SkillGroup[] = [
   { category: "Languages", skills: ["Java", "Python", "JavaScript"] },
-  { category: "Web", skills: ["React.js", "Node.js", "HTML", "CSS", "MongoDB", "Next.js"] },
-  { category: "Tools", skills: ["Git", "GitHub", "Postman", "Flutter"] },
-  { category: "AI / ML", skills: ["scikit-learn", "Machine Learning"] },
-  { category: "Other", skills: ["DSA", "Competitive Programming", "CCNA"] }
+  {
+    category: "Web",
+    skills: ["HTML", "CSS", "React.js", "Node.js", "Express", "Redux Toolkit", "Next.js"]
+  },
+  {
+    category: "Databases & Backend",
+    skills: ["SQL", "MySQL", "MongoDB", "PostgreSQL", "Supabase", "JWT"]
+  },
+  { category: "AI / ML", skills: ["scikit-learn", "Pandas", "Random Forest", "TF-IDF"] },
+  { category: "Tools", skills: ["Git", "GitHub", "Postman", "Cursor", "GitHub Copilot"] },
+  { category: "Core", skills: ["DSA", "OOP", "Competitive Programming"] }
 ];
 
-export const EXPERIENCE: ExperienceItem = {
-  company: "Tarento Technologies",
-  role: "Software Development Intern",
-  duration: "Feb 2025 - March 2025",
-  points: [
-    "React.js and Node.js feature development across production modules.",
-    "Backend API integration and endpoint validation using Postman.",
-    "Hands-on collaboration in a real-world software delivery workflow."
-  ]
-};
+export const EXPERIENCE: ExperienceItem[] = [
+  {
+    company: "Tarento Technologies",
+    role: "Software Development Intern",
+    duration: "Feb 2026 – Mar 2026",
+    points: [
+      "Built and tested React.js UI components and integrated them with Node.js REST APIs.",
+      "Validated backend API endpoints with Postman, identifying and reporting response issues.",
+      "Collaborated on database and backend tasks in a real-world development environment."
+    ]
+  },
+  {
+    company: "Intel Club, CMR Technical Campus",
+    role: "Executive Member",
+    duration: "University Role",
+    points: [
+      "Organized and participated in technical events, workshops, and coding challenges to engage peers in emerging technologies."
+    ]
+  }
+];
 
 export const PROJECTS: Project[] = [
   {
-    name: "CyberGuard (IOMP Project)",
+    name: "AI Finance Controller",
     description:
-      "Django cyberbullying detection system with four ML classifiers, TF-IDF vectorization on an 11k tweets dataset, and graduated intervention workflows.",
-    stack: ["Django", "Python", "ML", "TF-IDF", "NLP"],
-    github: "https://github.com/Ajay-Kote/IOMP-project",
-    liveUrl: null,
-    icon: ShieldCheck
+      "Multi-organization finance dashboard with Supabase Auth, Postgres, and Row Level Security. Includes transaction CRUD, CSV import/export, automatic categorization, anomaly detection, Razorpay payments, and Gemini-powered natural-language queries.",
+    stack: ["React", "Supabase", "Razorpay", "Gemini API", "Postgres"],
+    github: "https://github.com/Ajay-Kote/AI-FinanceController",
+    liveUrl: "https://ai-financecontroller.onrender.com/",
+    icon: LayoutDashboard
   },
   {
-    name: "Food Delivery Web App",
+    name: "MERN Blog Platform",
     description:
-      "Full-stack MERN platform with four role-based dashboards, JWT auth, MongoDB Atlas, and Recharts analytics deployed on Render.",
-    stack: ["MongoDB", "Express", "React", "Node.js", "JWT", "Recharts"],
-    github: "https://github.com/Ajay-Kote/Food-Delivery-App",
-    liveUrl: null,
-    icon: Database
-  },
-  {
-    name: "Blog App (MERN)",
-    description:
-      "Full-stack blog platform with rich text editor, user authentication, CRUD operations for posts, and a clean reading experience built on the MERN stack.",
-    stack: ["MongoDB", "Express", "React", "Node.js", "JWT"],
+      "Full-stack blog with JWT auth, CRUD, draft/publish workflow, comments, likes, and view tracking. Profiles include a stats dashboard, and the feed is paginated. Frontend on Vercel, backend on Render, MongoDB Atlas.",
+    stack: ["React", "Node.js", "Express", "MongoDB", "Redux Toolkit"],
     github: "https://github.com/Ajay-Kote/Mern-bolg",
     liveUrl: "https://blog-write-nti8.onrender.com/",
     icon: BookOpenText
   },
   {
-    name: "Finance Dashboard UI",
+    name: "CyberGuard",
     description:
-      "Role-based Admin/Viewer dashboard with dark/light mode, transaction management, and analytics-driven UI architecture.",
-    stack: ["React", "Vite", "Tailwind", "Recharts"],
-    github: "https://github.com/Ajay-Kote/Finance_Dashboard_UI",
-    liveUrl: "https://finance-dashboard-ui-ten-chi.vercel.app/",
-    icon: LayoutDashboard
+      "AI-powered content moderation platform with React, Django REST Framework, and JWT. ML text classification scores toxicity and spam, including YouTube comment analysis, plus an admin dashboard for review, appeals, and analytics.",
+    stack: ["React", "Django REST", "PostgreSQL", "scikit-learn", "YouTube API"],
+    github: "https://github.com/Ajay-Kote/CyberGuard",
+    liveUrl: "https://cyberguard-frontend-9roq.onrender.com/",
+    icon: ShieldCheck
   },
   {
-    name: "Student Performance Predictor",
+    name: "Food Delivery Web App",
     description:
-      "ML-powered GPA prediction system using SVM, Random Forest, Logistic Regression, and custom Ensemble model with an interactive Tkinter GUI for real-time visualization.",
-    stack: ["Python", "scikit-learn", "Tkinter", "ML", "Ensemble"],
-    github: "https://github.com/Ajay-Kote/RTRP-project",
+      "Full-stack MERN platform with role-based dashboards, JWT auth, MongoDB Atlas, and Recharts analytics, deployed on Render.",
+    stack: ["MongoDB", "Express", "React", "Node.js", "JWT", "Recharts"],
+    github: "https://github.com/Ajay-Kote/Food-Delivery-App",
     liveUrl: null,
-    icon: Code2
-  },
-  {
-    name: "MovieVerse",
-    description: "A movie discovery web app built with JavaScript.",
-    stack: ["JavaScript", "Web APIs", "UI/UX"],
-    github: "https://github.com/Ajay-Kote/MovieVerse",
-    liveUrl: null,
-    icon: Clapperboard
+    icon: Database
   }
 ];
 
 export const CERTIFICATIONS = [
-  "CCNA (Cisco)",
-  "Smart Coder DSA",
-  "Salesforce Agentforce",
-  "Infosys Spring Boot"
+  "Smart Coder Certification (DSA) — Smart Interviews",
+  "Salesforce Platform Developer Certification",
+  "Infosys Spring Boot Certification"
 ] as const;
 
 export const ACHIEVEMENTS = [
-  "1600+ LeetCode Rating",
-  "365-Day Streak Badge",
+  "Semi-Finalist, Smart India Hackathon (Top 15 of 100+ teams)",
+  "365-Day LeetCode Badge · 1700+ contest rating",
   "CodeChef Diamond Badge"
 ] as const;
 
 export const LEETCODE = {
   profile: "https://leetcode.com/u/akajaykote/",
   streak: "365-Day Streak Badge",
-  rating: "1600+ Rating"
+  rating: "1700+ Contest Rating"
 } as const;
+
+export const RESUME_PATH = "/Ajay_Kote_Resume.pdf";
 
 export const CONTACT = {
   email: "akajaykote@gmail.com",
   linkedin: "https://linkedin.com/in/ajay-kote-03717b290",
-  github: "https://github.com/Ajay-Kote"
+  github: "https://github.com/Ajay-Kote",
+  location: "Hyderabad, India"
 };
 
 export const SOCIALS = [

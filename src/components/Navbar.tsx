@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import { NAV_ITEMS } from "@/lib/data";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -18,16 +22,36 @@ export default function Navbar() {
         <ul className="hidden items-center gap-7 md:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
+              <a href={item.href} className="font-mono text-sm text-white/80 transition hover:text-accent">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button
+          type="button"
+          className="rounded-md border border-white/15 p-2 text-white/80 md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((current) => !current)}
+        >
+          {open ? <X size={18} /> : <Menu size={18} />}
+        </button>
+      </nav>
+      {open ? (
+        <ul className="space-y-1 border-t border-white/10 bg-black/90 px-6 py-4 md:hidden">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.href}>
               <a
                 href={item.href}
-                className="font-mono text-sm text-white/80 transition hover:text-accent"
+                onClick={() => setOpen(false)}
+                className="block py-2 font-mono text-sm text-white/85"
               >
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
-      </nav>
+      ) : null}
     </motion.header>
   );
 }

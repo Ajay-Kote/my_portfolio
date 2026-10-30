@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { HERO_BIO, HERO_ROLES } from "@/lib/data";
+import { HERO_BIO, HERO_ROLES, RESUME_PATH } from "@/lib/data";
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -46,7 +46,7 @@ export default function Hero() {
           transition={{ duration: 0.45 }}
           className="accent-text mb-6 text-xs uppercase tracking-[0.25em]"
         >
-          Elite Developer Portfolio
+          Full-Stack Developer · Hyderabad
         </motion.p>
         <motion.h1
           initial={{ y: 30, opacity: 0 }}
@@ -90,7 +90,8 @@ export default function Hero() {
             View Projects
           </a>
           <a
-            href="mailto:akajaykote@gmail.com?subject=Resume%20Request%20-%20Ajay%20Kote"
+            href={RESUME_PATH}
+            download
             className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 font-mono text-sm transition hover:border-accent hover:text-accent"
           >
             <Download size={14} />

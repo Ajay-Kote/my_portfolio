@@ -36,6 +36,7 @@ export default function Contact() {
           className="space-y-3"
         >
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Contact</p>
+          <p className="text-white/70">{CONTACT.location}</p>
           <a href={`mailto:${CONTACT.email}`} className="block text-white/90 hover:text-accent">
             {CONTACT.email}
           </a>

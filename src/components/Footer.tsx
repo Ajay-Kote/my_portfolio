@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="section-shell pb-8 pt-6">
       <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-center md:flex-row">
-        <p className="font-mono text-sm text-white/60">Designed &amp; built by Ajay Kote © 2025</p>
+        <p className="font-mono text-sm text-white/60">Designed &amp; built by Ajay Kote © 2026</p>
         <div className="flex items-center gap-4">
           {SOCIALS.map((social) => {
             const Icon = social.icon;
